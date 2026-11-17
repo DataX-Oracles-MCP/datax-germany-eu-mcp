@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.DataX-Oracles-MCP/datax-germany-eu-mcp",
+  "title": "DataX Germany & EU Official Registries",
+  "description": "Germany & EU registries MCP (oeffentlichevergabe.de, BaFin, laws, TED, FSF) with USDC/EURC.",
+  "version": "0.1.4",
+  "repository": {
+    "url": "https://github.com/DataX-Oracles-MCP/datax-germany-eu-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://datax-de.duckdns.org/llms.txt",
+  "packages": [
+    {
+      "registryType": "oci",
+      "identifier": "ghcr.io/datax-oracles-mcp/datax-germany-eu-mcp:0.1.4",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "DATAX_BASE_URL",
+          "description": "Base URL of the DataX Truth Engine server.",
+          "format": "string",
+          "default": "https://datax-de.duckdns.org"
+        },
+        {
+          "name": "DATAX_TOKEN",
+          "description": "Optional unspent UTXO token (USDC or MiCA EURC) from /api/v1/issue-token for paid tools.",
+          "format": "string",
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
